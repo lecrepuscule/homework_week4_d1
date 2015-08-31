@@ -8,6 +8,10 @@ def list_clients(shelter)
   shelter.clients.each{|k,v| puts "id: #{k} -- name: #{v.name}, age: #{v.age}, gender: #{v.gender}, with #{v.number_of_pets} pets"}
 end
 
+def list_animals(shelter)
+  shelter.animals.each{|k,v| puts "id: #{k} -- name: #{v.name}, breed: #{v.breed}, age: #{v.age}, gender: #{v.gender}, loves #{v.favourite_toys}"}
+end
+
 def menu 
   # puts `clear`
   puts "*" * 52
@@ -62,6 +66,8 @@ while response.downcase != "q"
     puts rspca.take_in_animal(animal_data)
 
   when "5"
+    puts "here are all the animals in the shelter"
+    list_animals(rspca)
   when "6"
 
   end
