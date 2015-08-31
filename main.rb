@@ -4,6 +4,10 @@ require_relative "shelter"
 
 rspca = Shelter.new("RSPCA")
 
+def list_clients(shelter)
+  shelter.clients.each{|k,v| puts "id: #{k} -- name: #{v.name}, age: #{v.age}, gender: #{v.gender}, with #{v.number_of_pets} pets"}
+end
+
 def menu 
   # puts `clear`
   puts "*" * 52
@@ -38,7 +42,8 @@ while response.downcase != "q"
     puts rspca.register_client(client_data)
 
   when "2"
-
+    puts "here are all the clients"
+    list_clients(rspca)
   when "3"
 
   when "4"
