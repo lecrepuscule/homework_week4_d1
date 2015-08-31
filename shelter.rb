@@ -8,7 +8,7 @@ class Shelter
   def initialize (name)
     @name = name
     @clients = {
-      id: nil
+      id: nil,
       client_data: {}
     }
     @animals = {}
