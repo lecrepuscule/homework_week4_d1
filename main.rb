@@ -2,7 +2,7 @@ require_relative "animal"
 require_relative "client"
 require_relative "shelter"
 
-RSPCA = Shelter.new("RSPCA")
+rspca = Shelter.new("RSPCA")
 
 def menu 
   # puts `clear`
@@ -25,6 +25,17 @@ response = menu
 while response.downcase != "q"
   case response
   when "1"
+    client_data = {}
+    puts "client name?"
+    client_data[:name] = gets.chomp
+    puts "client age?"
+    client_data[:age] = gets.to_i
+    puts "client's gender?"
+    client_data[:gender] = gets.chomp
+    puts "how many pets does the client own?"
+    client_data[:number_of_pets] = gets.to_i
+
+    puts rspca.register_client(client_data)
 
   when "2"
 

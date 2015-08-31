@@ -7,14 +7,13 @@ class Shelter
 
   def initialize (name)
     @name = name
-    @clients = {
-      id: nil,
-      client_data: {}
-    }
+    @clients = {}
     @animals = {}
   end
 
-  def register_client (client)
+  def register_client (client_data)
+    client = Client.new(client_data)
+    clients[Client.client_count] = client
   end
 
   def take_in_animal (animal)
