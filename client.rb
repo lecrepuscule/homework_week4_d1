@@ -12,12 +12,12 @@ class Client
     @@client_count += 1
   end
 
-  def adopt_animal (animal)
-    number_of_pets += 1
+  def adopt_animal
+    @number_of_pets += 1
   end
 
   def give_up_animal
-    number_of_pets -= 1
+    @number_of_pets -= 1
   end
 
   def self.client_count

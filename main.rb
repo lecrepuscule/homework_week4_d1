@@ -32,6 +32,7 @@ response = menu
 
 while response.downcase != "q"
   case response
+
   when "1"
     client_data = {}
     puts "client name?"
@@ -48,10 +49,17 @@ while response.downcase != "q"
   when "2"
     puts "here are all the clients"
     list_clients(rspca)
+
   when "3"
+    #update client info
 
   when "4"
     animal_data = {}
+    puts "which client is giving up an animal?"
+    list_clients(rspca)
+    client_id = gets.to_i
+    client = rspca.clients[client_id]
+
     puts "animal name?"
     animal_data[:name] = gets.chomp
     puts "animal breed?"
@@ -64,12 +72,26 @@ while response.downcase != "q"
     animal_data[:favourite_toys] = gets.chomp
 
     puts rspca.take_in_animal(animal_data)
+    client.give_up_animal
 
   when "5"
     puts "here are all the animals in the shelter"
     list_animals(rspca)
-  when "6"
 
+  when "6"
+    puts "which client is adopting?"
+    list_clients(rspca)
+    client_id = gets.to_i
+    client = rspca.clients[client_id]
+
+    puts "which animal is being adopted?"
+    list_animals(rspca)
+    animal_id = gets.to_i
+    # animal = rspca.animals[animal_id]
+
+    client.adopt_animal
+    rspca.give_out_animal(animal_id)
   end
+
   response = menu
 end

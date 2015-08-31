@@ -25,7 +25,8 @@ class Shelter
     end
   end
 
-  def give_out_animal (animal)
+  def give_out_animal (animal_id)
+    animals.delete(animal_id)
   end
 
 end
