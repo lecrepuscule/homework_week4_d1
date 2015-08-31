@@ -47,6 +47,20 @@ while response.downcase != "q"
   when "3"
 
   when "4"
+    animal_data = {}
+    puts "animal name?"
+    animal_data[:name] = gets.chomp
+    puts "animal breed?"
+    animal_data[:breed] = gets.chomp
+    puts "animal age?"
+    animal_data[:age] = gets.to_i
+    puts "animal's gender?"
+    animal_data[:gender] = gets.chomp
+    puts "favourite toys?"
+    animal_data[:favourite_toys] = gets.chomp
+
+    puts rspca.take_in_animal(animal_data)
+
   when "5"
   when "6"
 

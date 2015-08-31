@@ -4,7 +4,7 @@ class Client
 
   @@client_count = 0
 
-  def initialize (personal_data)
+  def initialize (personal_data={})
     @name = personal_data[:name]
     @age = personal_data[:age]
     @gender = personal_data[:gender]

@@ -16,7 +16,13 @@ class Shelter
     clients[Client.client_count] = client
   end
 
-  def take_in_animal (animal)
+  def take_in_animal (animal_data)
+    unless Animal.animal_count >= CAPACITY
+      animal = Animal.new(animal_data)
+      animals[Animal.animal_count] = animal
+    else 
+      puts "FULL HOUSE!"
+    end
   end
 
   def give_out_animal (animal)
