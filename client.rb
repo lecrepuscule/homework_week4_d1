@@ -13,11 +13,11 @@ class Client
   end
 
   def adopt_animal
-    @number_of_pets += 1
+    @number_of_pets += 1s
   end
 
   def give_up_animal
-    @number_of_pets -= 1
+    @number_of_pets >=1 ? @number_of_pets -= 1 : puts "no pet to give up!"
   end
 
   def self.client_count

@@ -59,6 +59,7 @@ while response.downcase != "q"
     list_clients(rspca)
     client_id = gets.to_i
     client = rspca.clients[client_id]
+    client.give_up_animal
 
     puts "animal name?"
     animal_data[:name] = gets.chomp
@@ -72,7 +73,6 @@ while response.downcase != "q"
     animal_data[:favourite_toys] = gets.chomp
 
     puts rspca.take_in_animal(animal_data)
-    client.give_up_animal
 
   when "5"
     puts "here are all the animals in the shelter"

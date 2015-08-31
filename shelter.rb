@@ -17,7 +17,7 @@ class Shelter
   end
 
   def take_in_animal (animal_data)
-    unless Animal.animal_count >= CAPACITY
+    unless @animals.length >= CAPACITY
       animal = Animal.new(animal_data)
       animals[Animal.animal_count] = animal
     else 
